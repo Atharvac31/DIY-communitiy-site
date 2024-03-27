@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="main.css" />
+    <title>Signup</title>
+    <style>
+      .wrapper {
+        max-width: 760px;
+        margin: auto;
+      }
+      .box {
+        max-width: 400px;
+        border: 2px solid purple;
+        border-radius: 1em;
+        padding: 1em;
+      }
+    </style>
+    <link rel = "stylesheet" href = "http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css"/>
+  	<script src = "http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+  </head>
+  <body style="margin: 0">
+    
+    <hr />
+    
+    <div class="wrapper">
+      <!-- <video controls>
+        <source  src="video.mp4" type="video/mp4"> 
+        <track label="English" kind="subtitles" srclang="en" src="f1.vtt" default>
+      </video> -->
+      <!-- <audio src="audio.mp3" controls></audio> -->
+      <div id = "map" style = "width: 900px; height: 580px"></div>
+<script>
+var map = new L.map("map").setView([18.9902, 73.1277], 10);
+
+var layer = new
+L.TileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png");
+
+map.addLayer(layer);
+
+var marker = L.marker([18.9902, 73.1277]).addTo(map);
+
+var circle = L.circle([18.9902, 73.1277], {
+    color: 'red',
+    fillColor: '#f03',
+    fillOpacity: 0.5,
+    radius: 500
+}).addTo(map);
+</script>
+      

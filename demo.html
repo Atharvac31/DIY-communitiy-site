@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <style>
+      body {
+        margin: 0px;
+        padding: 0px;
+      }
+
+      canvas {
+        display: block;
+        margin: 0 auto;
+      }
+
+      /* Media queries */
+      @media screen and (max-width: 600px) {
+        canvas {
+          width: 200px;
+          height: 200px;
+        }
+      }
+
+      @media screen and (min-width: 601px) and (max-width: 900px) {
+        canvas {
+          width: 250px;
+          height: 250px;
+        }
+      }
+
+      @media screen and (min-width: 901px) {
+        canvas {
+          width: 300px;
+          height: 300px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="myCanvas" width="300" height="300"></canvas>
+
+    <script>
+      var canvas = document.getElementById("myCanvas");
+      var ctx = canvas.getContext('2d');
+      var centerX = canvas.width / 2;
+      var centerY = canvas.height / 2;
+      var radius = 100;
+
+      // Draw the circle
+      ctx.beginPath();
+      ctx.arc(centerX, centerY, radius, 0, 2 * Math.PI, false);
+      ctx.fillStyle = 'orange';
+      ctx.fill();
+
+      // Draw the text
+      ctx.font = "50px Arial";
+      ctx.fillStyle = "yellow";
+      ctx.textAlign = "center";
+      ctx.textBaseline = "middle";
+      ctx.fillText("DIY", centerX, centerY);
+    </script>
+  </body>
+</html>

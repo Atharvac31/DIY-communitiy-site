@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DIY Website Logo</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f0f0f0;
+    }
+    canvas {
+        border: 1px solid #000;
+    }
+</style>
+</head>
+<body>
+<canvas id="logoCanvas" width="200" height="200"></canvas>
+
+<script>
+    const canvas = document.getElementById('logoCanvas');
+    const ctx = canvas.getContext('2d');
+
+    // Drawing a simple logo
+    ctx.fillStyle = '#e06c19'; // Blue color
+    ctx.beginPath();
+    ctx.arc(100, 100, 80, 0, Math.PI * 2);
+    ctx.fill();
+
+    ctx.fillStyle = '#3d270a'; // White color
+    ctx.font = 'bold 40px cursive';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText('DIY', 100, 100);
+
+    ctx.fillStyle = '#6b0202'; // Black color
+    ctx.font = 'bold 16px Arial';
+    ctx.fillText('SITE', 100, 140);
+</script>
+</body>
+</html>
